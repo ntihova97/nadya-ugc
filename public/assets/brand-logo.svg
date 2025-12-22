@@ -1,0 +1,53 @@
+<svg
+  width="520"
+  height="160"
+  viewBox="0 0 520 160"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- ICON -->
+  <g transform="translate(20,20)">
+    <!-- Soft background shape -->
+    <rect width="120" height="120" rx="28" fill="#F5EFE8"/>
+
+    <!-- Letter N -->
+    <path
+      d="M45 95 V25 L80 95 V25"
+      fill="none"
+      stroke="#C7A98B"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+
+    <!-- Sparkles -->
+    <g fill="#EADFCC">
+      <path d="M28 28 L31 36 L39 39 L31 42 L28 50 L25 42 L17 39 L25 36 Z"/>
+      <path d="M95 78 L97 84 L103 86 L97 88 L95 94 L93 88 L87 86 L93 84 Z"/>
+    </g>
+  </g>
+
+  <!-- BRAND NAME -->
+  <text
+    x="170"
+    y="90"
+    fill="#2B2B2B"
+    font-size="42"
+    font-family="Inter, Helvetica Neue, Arial, sans-serif"
+    font-weight="500"
+    letter-spacing="1"
+  >
+    N A D Y A
+  </text>
+
+  <!-- TAGLINE (optional, can remove) -->
+  <text
+    x="170"
+    y="120"
+    fill="#8E8E8E"
+    font-size="24"
+    font-family="Inter, Helvetica Neue, Arial, sans-serif"
+    letter-spacing="0.5"
+  >
+    digital &amp; UGC creator
+  </text>
+</svg>

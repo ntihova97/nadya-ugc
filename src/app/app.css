@@ -1,0 +1,320 @@
+:host {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+
+  --bright-blue: oklch(51.01% 0.274 263.83);
+  --electric-violet: oklch(53.18% 0.28 296.97);
+  --french-violet: oklch(47.66% 0.246 305.88);
+  --vivid-pink: oklch(69.02% 0.277 332.77);
+  --hot-red: oklch(61.42% 0.238 15.34);
+  --orange-red: oklch(0.633 0.24 31.627);
+  --peach: oklch(0.773 0.078 57.228);
+
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+  --gray-400: oklch(70.9% 0.015 304.04);
+
+  --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+    180deg,
+    var(--peach) 0%,
+    var(--orange-red) 50%,
+    var(--gray-900) 100%
+  );
+
+  --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+    90deg,
+    var(--orange-red) 0%,
+    var(--vivid-pink) 50%,
+    var(--electric-violet) 100%
+  );
+
+  --pill-accent: var(--bright-blue);
+
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3.125rem;
+  color: var(--gray-900);
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.125rem;
+  margin: 0;
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+}
+
+p {
+  margin: 0;
+  color: var(--gray-700);
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: auto;
+  background: radial-gradient(circle at top right, var(--peach) 0%, #ffffff 40%),
+  radial-gradient(circle at bottom left, #fdf0ed 0%, #ffffff 50%);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #3a3535;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    &:hover {
+      color: #ff4081;
+    }
+  }
+}
+
+.header-logo {
+  height: 100px;
+  width: auto;
+}
+
+.mailto {
+  background: #000;
+  color: #fff !important;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+}
+
+.content {
+  width: 100%;
+  margin-bottom: 3rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  grid-auto-rows: auto;
+  column-gap: 1.5rem;
+  row-gap: 1.5rem;
+  align-items: start;
+}
+
+.divider {
+  grid-column: 2;
+  grid-row: 1;
+
+  width: 1px;
+  align-self: stretch;
+  background: var(--red-to-pink-to-purple-vertical-gradient);
+  min-height: 100%;
+}
+
+@media screen and (width: 768px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .divider {
+    height: 1px;
+    width: 100%;
+    background: var(--red-to-pink-to-purple-horizontal-gradient);
+    margin-block: 1.5rem;
+  }
+
+  .collage {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .photo {
+    position: static;
+    transform: none !important;
+    width: 90%;
+  }
+}
+
+.collage {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  margin-top: 20px;
+  overflow: visible;
+  .photo {
+    position: absolute;
+    width: 40%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(61, 43, 31, 0.15);
+    border: 6px solid #fff; /* White border like a physical photo print */
+    transition: transform 0.4s ease, z-index 0.3s;
+    object-fit: cover;
+  }
+}
+
+.photo:nth-child(1) {
+  top: 0;
+  left: 0;
+  transform: rotate(-4deg);
+  z-index: 4;
+}
+
+.photo:nth-child(2) {
+  top: 15%;
+  left: 20%;
+  transform: rotate(3deg);
+  z-index: 3;
+}
+
+.photo:nth-child(3) {
+  bottom: 10%;
+  right: 30%;
+  transform: rotate(-2deg);
+  z-index: 2;
+}
+
+.photo:nth-child(4) {
+  bottom: 0;
+  right: 5%;
+  transform: rotate(5deg);
+  z-index: 1;
+}
+
+
+
+/* Bring the photo to the front */
+.photo:hover {
+  transform: scale(1.05) rotate(0deg);
+  z-index: 10 !important;
+  cursor: pointer;
+}
+
+.left-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'Playfair Display', serif;
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -4px;
+    margin-bottom: 2rem;
+  }
+  h2 {
+    font-family: serif;
+    font-style: italic;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--peach);
+    margin-bottom: 1rem;
+  }
+  .under-title {
+    font-size: 30px;
+    color: var(--gray-700);
+    border-left: 3px solid var(--peach); /* Artistic accent line */
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .lets-connect {
+    font-size: 32px;
+    margin-top: 60px;
+    text-align: center;
+  }
+}
+
+.social-media {
+  display: flex;
+  gap: 100px;
+  margin-top: 100px;
+  justify-content: center;
+  .followers {
+    text-align: center;
+    font-size: 32px;
+  }
+}
+
+.better-together, .bullet-list, .self-content, .duo-content {
+  h2 {
+    color: var(--peach);
+  }
+  font-family: serif;
+  font-style: italic;
+  color: var(--gray-700);
+  width: 80%;
+  font-size: 30px;
+  margin: 35px 0;
+}
+
+.bullet-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding: 0; /* Removed padding here to prevent overall offset */
+}
+
+.bullet-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-style: normal;
+  color: var(--gray-700);
+  padding-left: 2rem; /* Moved padding here so EVERY li has space for the icon */
+  position: relative;
+  line-height: 1.4;
+}
+
+.bullet-list li::before {
+  content: '✦';
+  position: absolute;
+  left: 0; /* Now 'left: 0' refers to the start of each li block */
+  color: var(--peach);
+  font-size: 0.9rem;
+  top: 2px; /* Slight adjustment to align vertically with text */
+}
