@@ -73,7 +73,8 @@ p {
   box-sizing: border-box;
   position: relative;
   overflow: auto;
-  background: radial-gradient(circle at top right, var(--peach) 0%, #ffffff 40%),
+  background: radial-gradient(circle at top left, var(--peach) 0%, #ffffff 40%),
+  radial-gradient(circle at top right, var(--peach) 0%, #ffffff 40%),
   radial-gradient(circle at bottom left, #fdf0ed 0%, #ffffff 50%);
 }
 
@@ -99,11 +100,13 @@ p {
   display: flex;
   align-items: center;
   gap: 2rem;
+  font-size: 30px;
   a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
     transition: color 0.3s;
+    font-size: 30px;
     &:hover {
       color: #ff4081;
     }
@@ -238,18 +241,21 @@ p {
   font-family: 'Playfair Display', serif;
   h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 10vw, 7rem);
-    font-weight: 900;
+    font-size: 80px;
+    font-weight: 200;
     line-height: 0.85;
-    letter-spacing: -4px;
     margin-bottom: 2rem;
+    margin-top: 16px;
+    margin-left: 30px;
+    font-style: italic;
+    letter-spacing: 0.5px;
   }
   h2 {
     font-family: serif;
     font-style: italic;
-    font-size: 1.8rem;
+    font-size: 32px;
     font-weight: 400;
-    color: var(--peach);
+    margin-left: 30px;
     margin-bottom: 1rem;
   }
   .under-title {
@@ -259,12 +265,14 @@ p {
     padding-left: 1.5rem;
     margin-top: 1rem;
     font-weight: 400;
-    letter-spacing: -0.01em;
+    letter-spacing: 1px;
+    font-style: italic;
   }
   .lets-connect {
-    font-size: 32px;
+    font-size: 50px;
     margin-top: 60px;
     text-align: center;
+    font-style: italic;
   }
 }
 
@@ -287,27 +295,37 @@ p {
   font-style: italic;
   color: var(--gray-700);
   width: 80%;
-  font-size: 30px;
+  font-size: 36px;
   margin: 35px 0;
 }
 
+.better-together {
+  width: 97%;
+}
+
+.self-content h2 {
+  margin-left: 24px;
+}
+
 .bullet-list {
+  font-family: serif;
+  font-style: italic;
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   margin-top: 1rem;
-  padding: 0; /* Removed padding here to prevent overall offset */
+  padding: 5px; /* Removed padding here to prevent overall offset */
+  margin-left: 36px;
 }
 
 .bullet-list li {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.1rem;
-  font-style: normal;
+  font-family: serif;
+  font-size: 36px;
+  font-style: italic;
   color: var(--gray-700);
-  padding-left: 2rem; /* Moved padding here so EVERY li has space for the icon */
+  padding-left: 2rem;
   position: relative;
-  line-height: 1.4;
 }
 
 .bullet-list li::before {
