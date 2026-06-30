@@ -166,11 +166,34 @@ p {
   min-height: 100%;
 }
 
-@media screen and (width: 768px) {
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+  }
+
+  .header-logo {
+    height: 60px;
+  }
+
+  .header-nav {
+    gap: 1rem;
+    a {
+      font-size: 16px;
+    }
+  }
+
+  .mailto {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+  }
+
   .content {
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 2rem;
   }
 
   .divider {
@@ -180,18 +203,98 @@ p {
     margin-block: 1.5rem;
   }
 
-  .collage {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+  .left-side {
+    h1 {
+      font-size: 52px;
+      margin-left: 16px;
+    }
+    h2 {
+      font-size: 22px;
+      margin-left: 16px;
+    }
+    .under-title {
+      font-size: 18px;
+    }
+    .lets-connect {
+      font-size: 32px;
+      margin-top: 32px;
+    }
   }
 
-  .photo {
-    position: static;
-    transform: none !important;
-    width: 90%;
+  .social-media {
+    gap: 2rem;
+    margin-top: 2rem;
+    img {
+      height: 56px !important;
+      width: 56px !important;
+    }
+    .followers {
+      font-size: 20px;
+    }
+  }
+
+  .collage {
+    height: 320px;
+  }
+
+  .about-section {
+    width: 100%;
+    padding: 1.5rem 0;
+    h2 {
+      font-size: 30px;
+    }
+  }
+
+  .about-text {
+    flex-direction: column;
+    gap: 1.25rem;
+    p {
+      font-size: 16px;
+    }
+  }
+
+  .services-section {
+    width: 100%;
+    padding: 1.5rem 0;
+    h2 {
+      font-size: 30px;
+    }
+  }
+
+  .tab-btn {
+    font-size: 11px;
+    padding: 9px 20px;
+    letter-spacing: 1.5px;
+  }
+
+  .tab-panel {
+    max-width: 100%;
+  }
+
+  .bullet-list {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contact-section {
+    width: 100%;
+    padding: 1.5rem 0;
+    h2 {
+      font-size: 30px;
+    }
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
   }
 }
 
