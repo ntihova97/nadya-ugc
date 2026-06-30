@@ -1,20 +1,34 @@
-import {Component, ElementRef, signal, viewChild, ViewEncapsulation} from '@angular/core';
+import { Component, ElementRef, signal, viewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  // This refers to <div #about>
-  // It returns a Signal containing an ElementRef<HTMLDivElement>
   protected readonly aboutSection = viewChild<ElementRef<HTMLDivElement>>('about');
+  protected activeTab = signal<'solo' | 'duo'>('solo');
 
   scrollToAbout() {
-    // Accessing the underlying native element
     this.aboutSection()?.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  setTab(tab: 'solo' | 'duo') {
+    this.activeTab.set(tab);
+  }
+
+  toggleVideo(event: Event) {
+    const wrapper = event.currentTarget as HTMLElement;
+    const video = wrapper.querySelector('video') as HTMLVideoElement;
+    if (!video) return;
+    if (video.paused) {
+      video.play();
+      wrapper.classList.add('playing');
+    } else {
+      video.pause();
+      wrapper.classList.remove('playing');
+    }
   }
 }

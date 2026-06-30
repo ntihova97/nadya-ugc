@@ -2,29 +2,28 @@
   <div class="header">
     <img src="/assets/brand-logo.svg" alt="Logo" class="header-logo" />
     <nav class="header-nav">
-      <a (click)="scrollToAbout()"  href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="mailto:ntihova97@gmail.com" class="mailto">Contacts</a>
+      <a (click)="scrollToAbout()" href="#about">За мен</a>
+      <a href="#services">Услуги</a>
+      <a href="mailto:ntihova97@gmail.com" class="mailto">Контакти</a>
     </nav>
   </div>
-  <div #about class="content">
+  <div #about id="about" class="content">
     <div class="left-side">
       <h1>Nadezhda Tihova</h1>
-      <h2>Digital & UGC Creator</h2>
-      <p class="under-title">Създавам автентично съдържание —
-        понякога сама, понякога заедно.</p>
+      <h2>Дигитален & UGC Криейтър</h2>
+      <p class="under-title">Създавам автентично съдържание — понякога сама, понякога заедно.</p>
       <p class="lets-connect">Нека се свържем!</p>
       <div class="social-media">
         <a href="https://tiktok.com/@n_tihova" target="_blank" aria-label="TikTok">
-          <img src="/assets/tiktok.svg" style="height: 132px; width: 132px;"/>
-          <p class="followers">1500</p>
+          <img src="/assets/tiktok.svg" style="height: 132px; width: 132px" />
+          <p class="followers">2500</p>
         </a>
         <a href="https://www.instagram.com/nycka_a_a/" target="_blank" aria-label="TikTok">
-          <img src="/assets/Instagram.svg"/>
-          <p class="followers">1300</p>
+          <img src="/assets/Instagram.svg" />
+          <p class="followers">1400</p>
         </a>
         <a href="https://www.facebook.com/nadezhda.tihova97" target="_blank" aria-label="TikTok">
-          <img src="/assets/facebook.svg" style="height: 132px; width: 132px;"/>
+          <img src="/assets/facebook.svg" style="height: 132px; width: 132px" />
           <p class="followers">3800</p>
         </a>
       </div>
@@ -39,46 +38,135 @@
       </div>
     </div>
   </div>
-  <div class="better-together">
+  <div class="about-section">
+    <span class="section-label">За мен</span>
     <h2>По-добри заедно</h2>
-    Създавам динамични и естетични TikTok видеа и фото съдържание за заведения, ресторанти, пекарни, козметика, дрехи и продукти от ежедневието. Работя както като микроинфлуенсър, така и като UGC creator за брандове, които искат качествено съдържание за своите профили и реклами.
-    Създавам съдържание заедно с моя партньор.
-
-    Като дуо носим естествена химия, истински емоции
-    и близко до хората разказване на истории във всеки проект.
-  </div>
-  <div class="content">
-    <div class="self-content">
-      <h2>Самостоятелно съдържание</h2>
-      <ul class="bullet-list">
-        <li>Influencer Content</li>
-        <li>UGC Content</li>
-        <li>Photo Content</li>
-        <li>Product demos</li>
-        <li>First Impressions</li>
-        <li>Skincare Experiment</li>
-        <li>Fashion Review</li>
-        <li>New Launches</li>
-      </ul>
-    </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="duo-content">
-      <h2>Съдържание като дуо</h2>
-      <p>UGC съдържание за двойки
-
-        Лайфстайл и релейшъншип съдържание
-
-        POV видеа
-
-        Бранд сторителинг с реална химия</p>
+    <div class="about-text">
+      <p>
+        Създавам динамични и естетични TikTok видеа и фото съдържание за заведения, ресторанти,
+        пекарни, козметика, дрехи и продукти от ежедневието.
+      </p>
+      <p>
+        Работя като микроинфлуенсър и UGC creator за брандове. Заедно с партньора ми носим
+        естествена химия, истински емоции и близко до хората разказване на истории.
+      </p>
     </div>
   </div>
-  <div class="better-together">
-    <h2>Social Media Followers</h2>
-    <span>Tik Tok</span>
-    <span>Instagram</span>
-    <span>Facebook</span>
-    <p>Активно развивам своята TikTok аудитория с естествен, ангажиращ и лайфстайл ориентиран контент, който достига до реални хора, интересуващи се от заведения, продукти и ежедневни находки.</p>
+  <div class="services-section" id="services">
+    <span class="section-label">Услуги</span>
+    <h2>Какво предлагам</h2>
+    <div class="tab-bar">
+      <button class="tab-btn" [class.active]="activeTab() === 'solo'" (click)="setTab('solo')">
+        Самостоятелно
+      </button>
+      <button class="tab-btn" [class.active]="activeTab() === 'duo'" (click)="setTab('duo')">
+        Като дуо
+      </button>
+    </div>
+
+    @if (activeTab() === 'solo') {
+      <div class="tab-panel">
+        <p class="tab-description">
+          Автентично женско съдържание за брандове в сферата на бюти, мода, скинкеър и ежедневен
+          лайфстайл.
+        </p>
+        <ul class="bullet-list">
+          <li>Видео съдържание за Reels & TikTok</li>
+          <li>UGC за бранд канали и реклами</li>
+          <li>Фото съдържание</li>
+          <li>Демо на продукти</li>
+          <li>Първи впечатления</li>
+          <li>Скинкеър рутина & ревю</li>
+          <li>Моден преглед</li>
+          <li>Нови лансирания & ревюта</li>
+        </ul>
+      </div>
+    }
+
+    @if (activeTab() === 'duo') {
+      <div class="tab-panel">
+        <p class="tab-description">
+          Съдържание с моя партньор — естествена химия и истински емоции за брандове, заведения и
+          лайфстайл проекти.
+        </p>
+        <ul class="bullet-list">
+          <li>UGC съдържание за двойки</li>
+          <li>Лайфстайл и съдържание за двойки</li>
+          <li>POV видеа</li>
+          <li>Бранд разказване с реална химия</li>
+          <li>Ресторант & заведение съдържание</li>
+          <li>Пътуване & туризъм видеа</li>
+        </ul>
+      </div>
+    }
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item" (click)="toggleVideo($event)">
+        <video src="/assets/aria_iOZ4OL7k.mp4" muted loop playsinline></video>
+        <div class="play-overlay"><span class="play-icon"></span></div>
+      </div>
+      <div class="portfolio-item" (click)="toggleVideo($event)">
+        <video src="/assets/martinez_fdyPXrXZ.mp4" muted loop playsinline></video>
+        <div class="play-overlay"><span class="play-icon"></span></div>
+      </div>
+      <div class="portfolio-item" (click)="toggleVideo($event)">
+        <video src="/assets/martinez-couple_WO67CyAg.mp4" muted loop playsinline></video>
+        <div class="play-overlay"><span class="play-icon"></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="contact-section" id="contact">
+    <span class="section-label">Контакти</span>
+    <h2>Нека се свържем</h2>
+    <p class="contact-tagline">Имаш проект? Разкажи ми повече и ще се свържа с теб до 24 часа.</p>
+    <form class="contact-form" action="https://formspree.io/f/maqgdplz" method="POST">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Име</label>
+          <input type="text" id="name" name="name" placeholder="Твоето име" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Имейл</label>
+          <input type="email" id="email" name="email" placeholder="email@example.com" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="brand">Бранд / Компания</label>
+          <input type="text" id="brand" name="brand" placeholder="Името на бранда" />
+        </div>
+        <div class="form-group">
+          <label for="type">Вид съдържание</label>
+          <select id="type" name="type">
+            <option value="" disabled selected>Избери...</option>
+            <option value="solo">Самостоятелно</option>
+            <option value="duo">Като дуо</option>
+            <option value="both">И двете</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="message">Описание на проекта</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder="Разкажи ми за продукта, платформата и какво очакваш..."
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="budget">Бюджет</label>
+        <select id="budget" name="budget">
+          <option value="" disabled selected>Избери диапазон...</option>
+          <option value="under-50">До 50 €</option>
+          <option value="50-100">50 – 100 €</option>
+          <option value="over-100">Над 100 €</option>
+          <option value="other">Друго</option>
+        </select>
+      </div>
+      <button type="submit" class="form-submit">Изпрати запитване</button>
+    </form>
   </div>
 </main>
 
